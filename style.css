@@ -1,0 +1,172 @@
+/* Set background image */
+body {
+    background-image: url("/static/hospital.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Center the form container */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style the form elements */
+input, select, button {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    display: block;
+}
+
+input, select {
+    background-color: #f8f8f8;
+    color: black;
+}
+
+/* Fix input alignment */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style the button */
+button {
+    width: 95%;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Style the result page */
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style links */
+a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---- DASHBOARD STYLES ---- */
+
+/* Dashboard container */
+.dashboard-container {
+    width: 60%;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Ensure the table stays inside the container */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 15px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Logout button */
+.logout-btn {
+    background-color: red;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container, .dashboard-container {
+        width: 90%;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
