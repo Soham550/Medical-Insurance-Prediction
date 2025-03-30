@@ -1,0 +1,46 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ username }}!</h1>
+        
+        <h2>Your Past Predictions</h2>
+        
+        {% if predictions %}
+            <table border="1">
+                <tr>
+                    <th>Age</th>
+                    <th>BMI</th>
+                    <th>Children</th>
+                    <th>Smoker</th>
+                    <th>Region</th>
+                    <th>Predicted Cost ($)</th>
+                </tr>
+                {% for prediction in predictions %}
+                <tr>
+                    <td>{{ prediction.age }}</td>
+                    <td>{{ prediction.bmi }}</td>
+                    <td>{{ prediction.children }}</td>
+                    <td>{{ "Yes" if prediction.smoker else "No" }}</td>
+                    <td>{{ prediction.region }}</td>
+                    <td>${{ "%.2f"|format(prediction.predicted_cost) }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No past predictions available.</p>
+        {% endif %}
+        
+        <br>
+        <a href="{{ url_for('home') }}" class="btn">Go to Home</a>
+        <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+    </div>
+</body>
+</html>
